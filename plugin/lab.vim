@@ -8,6 +8,7 @@ set cpoptions&vim
 
 command! -bar LabBrowse call lab#browse()
 command! -bar LabIssue call lab#issue()
+command! -bar LabMergeRequest call lab#merge_request()
 
 let &cpoptions = s:save_cpo
 unlet s:save_cpo

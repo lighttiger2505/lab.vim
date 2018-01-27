@@ -10,5 +10,10 @@ function! lab#issue()
     echo l:issues
 endfunction
 
+function! lab#merge_request()
+    let l:merge_requests = system('lab merge-request')
+    echo l:merge_requests
+endfunction
+
 let &cpoptions = s:save_cpo
 unlet s:save_cpo
