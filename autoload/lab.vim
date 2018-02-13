@@ -1,8 +1,12 @@
 let s:save_cpo = &cpoptions
 set cpoptions&vim
 
-function! lab#browse()
-    call system('lab browse')
+function! lab#browse(...)
+    let l:cmd = 'lab browse '
+    if a:0 >= 1
+        let l:cmd = l:cmd .a:1
+    end
+    call system(l:cmd)
 endfunction
 
 function! lab#issue()
