@@ -1,12 +1,12 @@
 let s:save_cpo = &cpoptions
 set cpoptions&vim
 
-function! lab#browse(...)
     let l:cmd = 'lab browse '
     if a:0 >= 1
         let l:cmd = l:cmd .a:1
     end
     call system(l:cmd)
+function! lab#browse() abort
 endfunction
 
 function! lab#BrowseFile(args, rangegiven, firstlnum, lastlnum) abort
@@ -21,14 +21,14 @@ function! lab#BrowseFile(args, rangegiven, firstlnum, lastlnum) abort
 	echomsg result
 endfunction
 
-function! lab#issue()
     let l:issues = system('lab issue')
     echo l:issues
+function! lab#issue() abort
 endfunction
 
-function! lab#merge_request()
     let l:merge_requests = system('lab merge-request')
     echo l:merge_requests
+function! lab#merge_request() abort
 endfunction
 
 let &cpoptions = s:save_cpo
